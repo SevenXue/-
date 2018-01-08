@@ -126,19 +126,19 @@ class ShowFrame(wx.Frame):
         #12个编辑框
         col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(80,25))
         col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
-        self.iid = col2
+        self.id = col2
 
         col3 = wx.StaticText(self.panel, -1, u"穴位", pos=(450, 8), size=(50,25))
         col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30))
-        self.typel = col4
+        self.chinese = col4
 
         col5 = wx.StaticText(self.panel, -1, u"脉络", pos=(5, 100), size=(50,25))
         col6 = wx.TextCtrl(self.panel, -1,  pos=(100, 100), size=(300, 30))
-        self.title = col6u
+        self.vein = col6
 
-        col7 = wx.StaticText(self.panel, -1, "链接", pos=(450, 100), size=(80,25))
+        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(80,25))
         col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
-        self.author = col8
+        self.url = col8
         #
         # col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
         # col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
@@ -150,27 +150,27 @@ class ShowFrame(wx.Frame):
 
         col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80,25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
-        self.disease = col14
+        self.dissection = col14
 
         col15 = wx.StaticText(self.panel, -1, u"主治疾病", pos=(450, 200), size=(50,25))
         col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE)
-        self.symptom = col16
+        self.disease = col16
 
         col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(5, 350), size=(50,25))
         col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style = wx.TE_MULTILINE)
-        self.acupoint = col18
+        self.compatiblity = col18
 
-        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(5, 350), size=(80,25))
+        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(80,25))
         col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
         self.location = col20
-
-        col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
-        col22 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
-        self.annotation = col22
-
-        col23 = wx.StaticText(self.panel, -1, u"录入者", pos=(850, 350), size=(50,25))
-        col24 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 350), size=(300, 30))
-        self.writer = col24
+        #
+        # col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
+        # col22 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
+        # self.annotation = col22
+        #
+        # col23 = wx.StaticText(self.panel, -1, u"录入者", pos=(850, 350), size=(50,25))
+        # col24 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 350), size=(300, 30))
+        # self.writer = col24
 
         self.select_id = select_id
         self.infoiid = self.mainframe.list.GetItem(select_id, 0).Text
@@ -182,18 +182,15 @@ class ShowFrame(wx.Frame):
     def showAllText(self):
         data = self.dbInfo.getInfoById(self.infoiid)
 
-        self.iid.SetValue(data[0])
-        self.typel.SetValue(data[1])
-        self.title.SetValue(data[2])
-        self.author.SetValue(data[3])
-        self.corauthor.SetValue(data[4])
-        self.datel.SetValue(data[5])
+        self.id.SetValue(data[0])
+        self.chinese.SetValue(data[1])
+        self.vein.SetValue(data[2])
+        self.dissection.SetValue(data[3])
+        self.disease.SetValue(data[4])
+        self.compatiblity.SetValue(data[5])
         self.disease.SetValue(data[6])
-        self.symptom.SetValue(data[7])
-        self.acupoint.SetValue(data[8])
         self.location.SetValue(data[9])
-        self.annotation.SetValue(data[10])
-        self.writer.SetValue(data[11])
+        self.url.SetValue(data[10])
 
 class MyFrame(wx.Frame):
     """
