@@ -1,11 +1,12 @@
 # -coding:utf-8
 
 import pymysql
-from information import *
+from acupoint import *
 
-class Infoact:
+class Acuact:
     def getCon(self):
         conn = pymysql.connect(host="59.77.36.1", port=22, user="root",
+
                                password="NMRdaixie123", db="", charset="utf8")
 
         return conn
@@ -18,31 +19,29 @@ class Infoact:
         '''
 
         #insert sql
-        sql = 'insert into information(iid, typel, title, author, corauthor, dates, disease,' \
-              'symptom, acupoint, location, annotation, writer) ' \
-              'value(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+        sql = 'insert into acupoint(id, chinese, vein, dissection, disease, compatibility, location, url' \
+              'value(%s, %s, %s, %s, %s, %s, %s, %s)'
 
         conn = self.getCon()
         if conn == None:
             return
 
         cursor = conn.cursor()
-        cursor.execute(sql, (info.idd, info.typel, info.title, info.author,
-                             info.corauthor, info.dates, info.disease, info.symptom,
-                             info.acupoint, info.location, info.annotation, info.writer))
+        cursor.execute(sql, (info.id, info.chinese, info.vein, info.dissection,
+                             info.disease, info.compatibility,info.location, info.url))
 
         conn.commit()
         cursor.close()
         conn.close()
 
-    def getAll(self, table):
+    def getAll(self):
         '''
          #返回表中全部信息
         :param db:
         :return:
         '''
 
-        sql = "select * from" + table
+        sql = "select id, chinese, vein, url from acupoint"
 
         conn = self.getCon()
         if conn == None:
@@ -70,7 +69,7 @@ class Infoact:
         :param idd:
         :return:
         '''
-        sql = "select * from information where iid=%s"
+        sql = "select * from acupoint where id=%s"
 
         conn = self.getCon()
         if conn == None:
@@ -92,7 +91,7 @@ class Infoact:
         :param idd:
         :return:
         '''
-        sql = "delete from information where iid=%s"
+        sql = "delete from acupoint where id=%s"
 
         conn = self.getCon()
         if conn == None:
@@ -108,10 +107,10 @@ class Infoact:
 
 
 if __name__ == '__main__':
-    db = Infoact()
-    info = Information(1,2,3,4,5,6,7,8,9,10,11,12)
-    db.insertInfo(info)
+    db = Acuact()
+    test_info = Acupoint(1,2,3,4,5,6,7,8,9,10,11,12)
+    db.insertInfo(test_info)
     info_list = db.getAll()
-    for item in list:
+    for item in info_list:
         print(item)
 

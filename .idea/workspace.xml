@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/DBaction.py" line="5" />
+    <bookmark url="file://$PROJECT_DIR$/Infoact.py" line="5" />
+    <bookmark url="file://$PROJECT_DIR$/frame.py" line="22" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebef34f-8541-42c4-afd8-8994b1990491" name="Default" comment="" />
@@ -13,17 +14,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/StrainDatabase$frame.coverage" NAME="frame Coverage Results" MODIFIED="1514869783007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/StrainDatabase$frame.coverage" NAME="frame Coverage Results" MODIFIED="1515390217895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/StrainDatabase$tmpframe.coverage" NAME="tmpframe Coverage Results" MODIFIED="1515390396026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="frame.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="frame.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+            <state relative-caret-position="221">
+              <caret line="426" column="0" lean-forward="true" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tmpframe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmpframe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,21 +53,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBaction.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DBaction.py">
+      <file leaf-file-name="Infoact.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Infoact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="115" column="18" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+            <state relative-caret-position="136">
+              <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding>
                 <element signature="e#17#31#0" expanded="true" />
-                <marker date="1515341309073" expanded="true" signature="421:433" ph="insert into acup... " />
-                <marker date="1515341309073" expanded="true" signature="421:498" ph="insert into information... " />
-                <marker date="1515341309073" expanded="true" signature="421:565" ph="insert into information... " />
-                <marker date="1515341309073" expanded="true" signature="421:566" ph="insert into information... " />
-                <marker date="1515341309073" expanded="true" signature="421:638" ph="insert into information... " />
-                <marker date="1515341309073" expanded="true" signature="1691:1729" ph="select * fro... information" />
-                <marker date="1515341309073" expanded="true" signature="2123:2159" ph="delete from " />
-                <marker date="1515341309073" expanded="true" signature="2129:2159" ph="select * fro... information" />
+                <marker date="1515390090267" expanded="true" signature="421:433" ph="insert into acup... " />
+                <marker date="1515390090267" expanded="true" signature="421:498" ph="insert into information... " />
+                <marker date="1515390090267" expanded="true" signature="421:565" ph="insert into information... " />
+                <marker date="1515390090267" expanded="true" signature="421:566" ph="insert into information... " />
+                <marker date="1515390090267" expanded="true" signature="421:638" ph="insert into information... " />
+                <marker date="1515390090267" expanded="true" signature="1718:1756" ph="select * fro... information" />
+                <marker date="1515390090267" expanded="true" signature="2150:2186" ph="delete from " />
+                <marker date="1515390090267" expanded="true" signature="2156:2186" ph="select * fro... information" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Acuact.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Acuact.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1937">
+              <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+              <folding>
+                <element signature="e#17#31#0" expanded="true" />
+                <marker date="1515388104411" expanded="true" signature="418:478" ph="insert into acupoint... " />
+                <marker date="1515388104411" expanded="true" signature="418:563" ph="insert into acupoint... " />
+                <marker date="1515388104411" expanded="true" signature="1024:1067" ph="select id, c... acupoint" />
+                <marker date="1515388104411" expanded="true" signature="1548:1582" ph="select * fro... acupoint" />
+                <marker date="1515388104411" expanded="true" signature="1976:2008" ph="delete from " />
               </folding>
             </state>
           </provider>
@@ -62,8 +93,8 @@
       <file leaf-file-name="information.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/information.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -84,10 +115,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frame.py" />
         <option value="$PROJECT_DIR$/acupoint.py" />
         <option value="$PROJECT_DIR$/information.py" />
         <option value="$PROJECT_DIR$/DBaction.py" />
+        <option value="$PROJECT_DIR$/Acuact.py" />
+        <option value="$PROJECT_DIR$/Infoact.py" />
+        <option value="$PROJECT_DIR$/tmpframe.py" />
+        <option value="$PROJECT_DIR$/frame.py" />
       </list>
     </option>
   </component>
@@ -150,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.frame">
+  <component name="RunManager" selected="Python.tmpframe">
     <configuration name="frame" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,9 +203,32 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="tmpframe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="StrainDatabase" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmpframe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.frame" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tmpframe" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.frame" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.tmpframe" />
+        <item index="1" class="java.lang.String" itemvalue="Python.frame" />
       </list>
     </recent_temporary>
   </component>
@@ -190,26 +247,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1432" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.272578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.272578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +277,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -243,28 +303,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/ProgramData/Anaconda2/Lib/site-packages/wx-3.0-msw/wx/_controls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4442" column="8" lean-forward="false" selection-start-line="4442" selection-start-column="8" selection-end-line="4442" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/ProgramData/Anaconda2/Lib/site-packages/wx-3.0-msw/wx/_core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="14452" column="8" lean-forward="false" selection-start-line="14452" selection-start-column="8" selection-end-line="14452" selection-end-column="8" />
+        <state relative-caret-position="14163">
+          <caret line="15080" column="8" lean-forward="false" selection-start-line="15080" selection-start-column="8" selection-end-line="15080" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frame.py">
+    <entry file="file://$PROJECT_DIR$/information.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Acuact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1937">
+          <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
           <folding>
-            <element signature="e#23#32#0" expanded="true" />
+            <element signature="e#17#31#0" expanded="true" />
+            <marker date="1515388104411" expanded="true" signature="418:478" ph="insert into acupoint... " />
+            <marker date="1515388104411" expanded="true" signature="418:563" ph="insert into acupoint... " />
+            <marker date="1515388104411" expanded="true" signature="1024:1067" ph="select id, c... acupoint" />
+            <marker date="1515388104411" expanded="true" signature="1548:1582" ph="select * fro... acupoint" />
+            <marker date="1515388104411" expanded="true" signature="1976:2008" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda2/Lib/site-packages/wx-3.0-msw/wx/_controls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="801">
+          <caret line="4727" column="8" lean-forward="false" selection-start-line="4727" selection-start-column="8" selection-end-line="4727" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Infoact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+          <folding>
+            <element signature="e#17#31#0" expanded="true" />
+            <marker date="1515390090267" expanded="true" signature="421:433" ph="insert into acup... " />
+            <marker date="1515390090267" expanded="true" signature="421:498" ph="insert into information... " />
+            <marker date="1515390090267" expanded="true" signature="421:565" ph="insert into information... " />
+            <marker date="1515390090267" expanded="true" signature="421:566" ph="insert into information... " />
+            <marker date="1515390090267" expanded="true" signature="421:638" ph="insert into information... " />
+            <marker date="1515390090267" expanded="true" signature="1718:1756" ph="select * fro... information" />
+            <marker date="1515390090267" expanded="true" signature="2150:2186" ph="delete from " />
+            <marker date="1515390090267" expanded="true" signature="2156:2186" ph="select * fro... information" />
           </folding>
         </state>
       </provider>
@@ -277,28 +368,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/information.py">
+    <entry file="file://$PROJECT_DIR$/tmpframe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="223">
+          <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBaction.py">
+    <entry file="file://$PROJECT_DIR$/frame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="115" column="18" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+        <state relative-caret-position="221">
+          <caret line="426" column="0" lean-forward="true" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
           <folding>
-            <element signature="e#17#31#0" expanded="true" />
-            <marker date="1515341309073" expanded="true" signature="421:433" ph="insert into acup... " />
-            <marker date="1515341309073" expanded="true" signature="421:498" ph="insert into information... " />
-            <marker date="1515341309073" expanded="true" signature="421:565" ph="insert into information... " />
-            <marker date="1515341309073" expanded="true" signature="421:566" ph="insert into information... " />
-            <marker date="1515341309073" expanded="true" signature="421:638" ph="insert into information... " />
-            <marker date="1515341309073" expanded="true" signature="1691:1729" ph="select * fro... information" />
-            <marker date="1515341309073" expanded="true" signature="2123:2159" ph="delete from " />
-            <marker date="1515341309073" expanded="true" signature="2129:2159" ph="select * fro... information" />
+            <element signature="e#23#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
