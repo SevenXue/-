@@ -176,7 +176,7 @@ class ShowFrame(wx.Frame):
         self.infoiid = self.mainframe.list.GetItem(select_id, 0).Text
 
         #连接数据库
-        self.dbInfo = Infoact()
+        self.dbInfo = Acuact()
         self.showAllText()
 
     def showAllText(self):
@@ -188,9 +188,8 @@ class ShowFrame(wx.Frame):
         self.dissection.SetValue(data[3])
         self.disease.SetValue(data[4])
         self.compatiblity.SetValue(data[5])
-        self.disease.SetValue(data[6])
-        self.location.SetValue(data[9])
-        self.url.SetValue(data[10])
+        self.location.SetValue(data[6])
+        self.url.SetValue(data[7])
 
 class MyFrame(wx.Frame):
     """
