@@ -5,7 +5,9 @@ from information import *
 
 class Acuact:
     def getCon(self):
-        conn = pymysql.connect(host="59.77.36.69", user="root", port=3306, passwd="NMRdaixie123", db="acupuncture")
+        #conn = pymysql.connect(host="59.77.36.69", user="root", port=3306, passwd="NMRdaixie123", db="acupuncture")
+        conn = pymysql.connect(host="59.77.36.69", port=3306, user="root",
+                               passwd="NMRdaixie123", db="acupuncture", charset="utf8")
 
         return conn
 

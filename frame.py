@@ -4,9 +4,8 @@ import wx
 import wx.aui, wx.grid
 import sys
 import pymysql
-from Infoact import *
-from information import *
 from Acuact import *
+from information import *
 import tmpframe
 
 reload(sys)
@@ -165,6 +164,17 @@ class UpdateFrame(wx.Frame):
 
     def showAllText(self):
         data = self.dbInfo.getInfoById(self.infoiid)
+
+
+        self.id.SetValue(data[0])
+        self.chinese.SetValue(data[1])
+        self.vein.SetValue(data[2])
+        self.dissection.SetValue(data[3])
+        self.disease.SetValue(data[4])
+        self.compatibility.SetValue(data[5])
+        self.location.SetValue(data[6])
+        self.url.SetValue(data[7])
+
 
         self.id.SetValue(data[0])
         self.chinese.SetValue(data[1])
@@ -327,14 +337,14 @@ class MyFrame(wx.Frame):
 
         #添加数据库操作对象
         self.dbhelper = Acuact()
-        datas = self.dbhelper.getAll()
-
-        for j in range(len(datas)):
-            data = datas[j]
-            self.list.SetItem(j, 0, data[0])
-            self.list.SetItem(j, 1, data[1])
-            self.list.SetItem(j, 2, data[2])
-            self.list.SetItem(j, 3, data[3])
+        # datas = self.dbhelper.getAll()
+        #
+        # for j in range(len(datas)):
+        #     data = datas[j]
+        #     self.list.SetItem(j, 0, data[0])
+        #     self.list.SetItem(j, 1, data[1])
+        #     self.list.SetItem(j, 2, data[2])
+        #     self.list.SetItem(j, 3, data[3])
 
     def add_data(self, evt):
         return None

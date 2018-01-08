@@ -5,8 +5,8 @@ from information import *
 
 class Infoact:
     def getCon(self):
-        conn = pymysql.connect(host="59.77.36.69", port=3306, user="root", unix_socket="/var/lib/mysql/mysql.sock",
-                               passwd="NMRdaixie123", db="acupuncture", charset="utf8")
+        conn = pymysql.connect(host="59.77.36.69", port=3306, user="root",
+                               password="NMRdaixie123", db="acupuncture", charset="utf8")
 
         return conn
 

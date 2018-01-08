@@ -422,14 +422,14 @@ class MyFrame(wx.Frame):
 
     def addToList(self):
         self.dbhelper = Infoact()
-        datas = self.dbhelper.getAll()
-
-        for j in range(len(datas)):
-            data = datas[j]
-            self.list.SetItem(j, 0, data[0])
-            self.list.SetItem(j, 1, data[1])
-            self.list.SetItem(j, 2, data[2])
-            self.list.SetItem(j, 3, data[3])
+        # datas = self.dbhelper.getAll()
+        #
+        # for j in range(len(datas)):
+        #     data = datas[j]
+        #     self.list.SetItem(j, 0, data[0])
+        #     self.list.SetItem(j, 1, data[1])
+        #     self.list.SetItem(j, 2, data[2])
+        #     self.list.SetItem(j, 3, data[3])
 
     def show_data(self, event):
         table = self.qName2.GetString(self.qName2.GetSelection())
