@@ -124,44 +124,44 @@ class ShowFrame(wx.Frame):
         self.panel.SetBackgroundColour("#FFFFFF")
 
         #12个编辑框
-        col1 = wx.StaticText(self.panel, -1, u"文献统一编号", pos=(5, 8), size=(80,25))
+        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(80,25))
         col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
         self.iid = col2
 
-        col3 = wx.StaticText(self.panel, -1, u"文献类别", pos=(450, 8), size=(50,25))
+        col3 = wx.StaticText(self.panel, -1, u"穴位", pos=(450, 8), size=(50,25))
         col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30))
         self.typel = col4
 
-        col5 = wx.StaticText(self.panel, -1, u"文献题目", pos=(850, 8), size=(50,25))
-        col6 = wx.TextCtrl(self.panel, -1,  pos=(900, 8), size=(300, 30))
-        self.title = col6
+        col5 = wx.StaticText(self.panel, -1, u"脉络", pos=(5, 100), size=(50,25))
+        col6 = wx.TextCtrl(self.panel, -1,  pos=(100, 100), size=(300, 30))
+        self.title = col6u
 
-        col7 = wx.StaticText(self.panel, -1, u"所有作者", pos=(5, 100), size=(80,25))
+        col7 = wx.StaticText(self.panel, -1, "链接", pos=(450, 100), size=(80,25))
         col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
         self.author = col8
+        #
+        # col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
+        # col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
+        # self.corauthor = col10
+        #
+        # col11 = wx.StaticText(self.panel, -1, u"发表日期", pos=(850, 100), size=(50,25))
+        # col12 = wx.TextCtrl(self.panel, -1, pos=(900, 100), size=(300, 30))
+        # self.datel = col12
 
-        col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
-        col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
-        self.corauthor = col10
-
-        col11 = wx.StaticText(self.panel, -1, u"发表日期", pos=(850, 100), size=(50,25))
-        col12 = wx.TextCtrl(self.panel, -1, pos=(900, 100), size=(300, 30))
-        self.datel = col12
-
-        col13 = wx.StaticText(self.panel, -1, u"疾病", pos=(5, 200), size=(80,25))
+        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80,25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
         self.disease = col14
 
-        col15 = wx.StaticText(self.panel, -1, u"症状", pos=(450, 200), size=(50,25))
+        col15 = wx.StaticText(self.panel, -1, u"主治疾病", pos=(450, 200), size=(50,25))
         col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE)
         self.symptom = col16
 
-        col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(850, 200), size=(50,25))
-        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 200), size=(300, 100), style = wx.TE_MULTILINE)
+        col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(5, 350), size=(50,25))
+        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style = wx.TE_MULTILINE)
         self.acupoint = col18
 
-        col19 = wx.StaticText(self.panel, -1, u"文献存储位置", pos=(5, 350), size=(80,25))
-        col20 = wx.TextCtrl(self.panel, -1, pos=(100, 350), size=(300, 30))
+        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(5, 350), size=(80,25))
+        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
         self.location = col20
 
         col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
@@ -194,126 +194,6 @@ class ShowFrame(wx.Frame):
         self.location.SetValue(data[9])
         self.annotation.SetValue(data[10])
         self.writer.SetValue(data[11])
-
-class MetaPanel(wx.Panel):
-
-    def __init__(self, parent):
-
-        wx.Panel.__init__(self, parent, -1)
-
-        self.mainframe = parent
-
-        #base information of database
-        table_list = ['Acupoint', 'Information']
-
-        self.qName = wx.StaticText(self, -1, "DataBase:", size=(60,30))
-        self.qName0 = wx.TextCtrl(self, -1, value='Acupoint',style=wx.TE_READONLY|wx.TE_CENTER, size=(100,-1))
-        self.qName1 = wx.StaticText(self, -1, "Table:")
-        self.qName2 = wx.Choice(self, -1, choices=table_list, size=(100,-1))
-
-        #column
-        self.col1 = wx.StaticText(self, -1, u"文献统一编号")
-        self.col2 = wx.TextCtrl(self, -1, u"不可为空", size=(220, -1))
-
-        self.col3 = wx.StaticText(self, -1, u"文献类别")
-        self.col4 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col5 = wx.StaticText(self, -1, u"文献题目")
-        self.col6 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col7 = wx.StaticText(self, -1, u"发表日期")
-        self.col8 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col9 = wx.StaticText(self, -1, u"所有作者")
-        self.col10 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col11 = wx.StaticText(self, -1, u"通讯作者")
-        self.col12 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col13 = wx.StaticText(self, -1, u"疾病")
-        self.col14 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col15 = wx.StaticText(self, -1, u"症状")
-        self.col16 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col17 = wx.StaticText(self, -1, u"配伍穴位")
-        self.col18 = wx.TextCtrl(self, -1, u"不可为空", size=(220, -1))
-
-        self.col19 = wx.StaticText(self, -1, u"文献存储位置")
-        self.col20 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col21 = wx.StaticText(self, -1, u"注释")
-        self.col22 = wx.TextCtrl(self, -1, size=(220, -1))
-
-        self.col23 = wx.StaticText(self, -1, u"录入者")
-        self.col24 = wx.TextCtrl(self, -1, u"不可为空", size=(220, -1))
-
-        # functions of database
-        self.add_button = wx.Button(self, 100, "Add", size=(220,-1))
-        self.Bind(wx.EVT_BUTTON, self.add_data, self.add_button)
-        self.add_button.SetDefault()
-
-        self.delete_button = wx.Button(self, 110, "Dalete", size=(220, -1))
-        self.Bind(wx.EVT_BUTTON, self.delete, self.delete_button)
-        self.delete_button.SetDefault()
-
-        self.modify_button = wx.Button(self, 120, "Modify", size=(220, -1))
-        self.Bind(wx.EVT_BUTTON, self.modify, self.modify_button)
-        self.modify_button.SetDefault()
-
-        self.select_button = wx.Button(self, 130, "Select", size=(220, -1))
-        self.Bind(wx.EVT_BUTTON, self.select, self.select_button)
-        self.select_button.SetDefault()
-
-        # layout of the panel
-        para_grid = wx.GridSizer(1, 4)
-        para_grid.AddMany([
-            self.qName, self.qName0,
-            self.qName1, self.qName2
-        ])
-
-        column_grid = wx.GridSizer(12, 2)
-        column_grid.AddMany([
-            self.col1, self.col2, self.col3, self.col4,
-            self.col5, self.col6, self.col7, self.col8,
-            self.col9, self.col10, self.col11, self.col12,
-            self.col13, self.col14, self.col15, self.col16,
-            self.col17, self.col18, self.col19, self.col20,
-            self.col21, self.col22, self.col23, self.col24
-        ])
-
-        function_gard = wx.GridSizer(4, 1)
-        function_gard.AddMany([self.add_button, self.delete_button, self.modify_button, self.select_button])
-
-        para_box = wx.StaticBoxSizer(wx.StaticBox(self, -1, "DataBase"))
-        para_box.Add(para_grid)
-
-        column_box = wx.StaticBoxSizer(wx.StaticBox(self, -1, "Columns"))
-        column_box.Add(column_grid)
-
-        tool_box = wx.StaticBoxSizer(wx.StaticBox(self, -1, "Function"))
-        tool_box.Add(function_gard)
-
-        # create the whole panel of left tree
-        mainbox = wx.BoxSizer(wx.VERTICAL)
-        mainbox.Add(para_box)
-        mainbox.Add(column_box)
-        mainbox.Add(tool_box)
-        self.SetSizer(mainbox)
-
-
-    def add_data(self, evt):
-        add_f = AddFrame(self, 11)
-        add_f.Show(True)
-
-    def delete(self, event):
-        return None
-
-    def modify(self, event):
-        return None
-
-    def select(self, event):
-        return None
 
 class MyFrame(wx.Frame):
     """
