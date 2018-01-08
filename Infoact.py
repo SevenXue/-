@@ -5,8 +5,8 @@ from information import *
 
 class Infoact:
     def getCon(self):
-        conn = pymysql.connect(host="59.77.36.1", port=22, user="root",
-                               password="NMRdaixie123", db="", charset="utf8")
+        conn = pymysql.connect(host="59.77.36.1", port=3306, user="root",
+                               password="NMRdaixie123", db="acupuncture", charset="utf8")
 
         return conn
 
@@ -27,7 +27,7 @@ class Infoact:
             return
 
         cursor = conn.cursor()
-        cursor.execute(sql, (info.idd, info.typel, info.title, info.author,
+        cursor.execute(sql, (info.iid, info.typel, info.title, info.author,
                              info.corauthor, info.dates, info.disease, info.symptom,
                              info.acupoint, info.location, info.annotation, info.writer))
 
@@ -105,7 +105,27 @@ class Infoact:
         cursor.close()
         conn.close()
 
+    def saveUpdate(self, iid, info):
+        '''
+            #通过idd
+        :param id:
+        :return:
+        '''
+        sql = "update information set type=%s, title=%s, author=%s, corauthor=%s, date=%s, disease=%s, sympotom=%s, " \
+              " acupoint=%s, location=%s, annotation=%s, writer=%s where iid=%s"
 
+        conn = self.getCon()
+        if conn == None:
+            return
+
+        cursor = conn.cursor()
+        cursor.execute(sql, (info.typel, info.title, info.author,
+                             info.corauthor, info.dates, info.disease, info.symptom,
+                             info.acupoint, info.location, info.annotation, info.writer, iid))
+
+        conn.commit()
+        cursor.close()
+        conn.close()
 
 if __name__ == '__main__':
     db = Infoact()

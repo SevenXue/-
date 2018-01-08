@@ -6,99 +6,186 @@ import sys
 import pymysql
 from Infoact import *
 from information import *
-from Acuact import *
 import tmpframe
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-class AddFrame(wx.Frame):
-    #添加信息弹出的小窗口
-    def __init__(self, parent, title):
+# class AddFrame(wx.Frame):
+#     #添加信息弹出的小窗口
+#     def __init__(self, parent, title):
+#
+#         self.mainframe = parent
+#
+#         wx.Frame.__init__(self, parent, title=title, size=(1000, 500))
+#
+#         self.panel= wx.Panel(self, pos=(0,0), size=(1000, 500))
+#         self.panel.SetBackgroundColour("#FFFFFF")
+#
+#         #12个编辑框
+#         col1 = wx.StaticText(self.panel, -1, u"文献统一编号", pos=(5, 8), size=(80,25))
+#         col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
+#         self.iid = col2
+#
+#         col3 = wx.StaticText(self.panel, -1, u"文献类别", pos=(450, 8), size=(50,25))
+#         col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30))
+#         self.typel = col4
+#
+#         col5 = wx.StaticText(self.panel, -1, u"文献题目", pos=(850, 8), size=(50,25))
+#         col6 = wx.TextCtrl(self.panel, -1,  pos=(900, 8), size=(300, 30))
+#         self.title = col6
+#
+#         col7 = wx.StaticText(self.panel, -1, u"所有作者", pos=(5, 100), size=(80,25))
+#         col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
+#         self.author = col8
+#
+#         col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
+#         col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
+#         self.corauthor = col10
+#
+#         col11 = wx.StaticText(self.panel, -1, u"发表日期", pos=(850, 100), size=(50,25))
+#         col12 = wx.TextCtrl(self.panel, -1, pos=(900, 100), size=(300, 30))
+#         self.datel = col12
+#
+#         col13 = wx.StaticText(self.panel, -1, u"疾病", pos=(5, 200), size=(80,25))
+#         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
+#         self.disease = col14
+#
+#         col15 = wx.StaticText(self.panel, -1, u"症状", pos=(450, 200), size=(50,25))
+#         col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE)
+#         self.symptom = col16
+#
+#         col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(850, 200), size=(50,25))
+#         col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 200), size=(300, 100), style = wx.TE_MULTILINE)
+#         self.acupoint = col18
+#
+#         col19 = wx.StaticText(self.panel, -1, u"文献存储位置", pos=(5, 350), size=(80,25))
+#         col20 = wx.TextCtrl(self.panel, -1, pos=(100, 350), size=(300, 30))
+#         self.location = col20
+#
+#         col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
+#         col22 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
+#         self.annotation = col22
+#
+#         col23 = wx.StaticText(self.panel, -1, u"录入者", pos=(850, 350), size=(50,25))
+#         col24 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 350), size=(300, 30))
+#         self.writer = col24
+#
+#         save_info = wx.Button(self.panel, label=u"保存", pos=(5, 400))
+#         self.Bind(wx.EVT_BUTTON, self.saveInfo, save_info)
+#
+#         #数据库接口
+#         self.dbInfo = Infoact()
+#
+#     def saveInfo(self, evt):
+#         '''
+#             #获取文本，插入数据
+#         :param evt:
+#         :return:
+#         '''
+#
+#         iid = self.iid.GetValue()
+#         typel = self.typel.GetValue()
+#         title = self.title.GetValue()
+#         author = self.author.GetValue()
+#         corauthor = self.corauthor.GetValue()
+#         datel = self.datel.GetValue()
+#         disease = self.disease.GetValue()
+#         symptom = self.symptom.GetValue()
+#         acupoint = self.acupoint.GetValue()
+#         location = self.location.GetValue()
+#         annotation = self.annotation.GetValue()
+#         writer = self.writer.GetValue()
+#
+#         if iid == '' or acupoint =='' or writer =='':
+#             warn = wx.MessageDialog(self, message=u"有非空字段为空！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)
+#             warn.ShowModal()  # 提示错误
+#             warn.Destroy()
+#             return
+#
+#         else:
+#             print u'开始写入'
+#
+#             info = Information(iid, typel, title, author, corauthor, datel, disease, symptom, acupoint, location, annotation, writer)
+#             self.dbInfo.insertInfo(info)
+#             self.mainframe.addToList()
+#
+#         self.Destroy()
 
+class UpdateFrame(wx.Frame):
+    # 更改信息，先显示信息，后更改
+    def __init__(self, parent, title, select_id):
         self.mainframe = parent
 
         wx.Frame.__init__(self, parent, title=title, size=(1000, 500))
 
-        self.panel= wx.Panel(self, pos=(0,0), size=(1000, 500))
+        self.panel = wx.Panel(self, pos=(0, 0), size=(1000, 500))
         self.panel.SetBackgroundColour("#FFFFFF")
 
-        #12个编辑框
-        col1 = wx.StaticText(self.panel, -1, u"文献统一编号", pos=(5, 8), size=(80,25))
+        # 12个编辑框
+        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(80, 25))
         col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
-        self.iid = col2
+        self.id = col2
 
-        col3 = wx.StaticText(self.panel, -1, u"文献类别", pos=(450, 8), size=(50,25))
+        col3 = wx.StaticText(self.panel, -1, u"穴位", pos=(450, 8), size=(50, 25))
         col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30))
-        self.typel = col4
+        self.chinese = col4
 
-        col5 = wx.StaticText(self.panel, -1, u"文献题目", pos=(850, 8), size=(50,25))
-        col6 = wx.TextCtrl(self.panel, -1,  pos=(900, 8), size=(300, 30))
-        self.title = col6
+        col5 = wx.StaticText(self.panel, -1, u"脉络", pos=(5, 100), size=(50, 25))
+        col6 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
+        self.vein = col6
 
-        col7 = wx.StaticText(self.panel, -1, u"所有作者", pos=(5, 100), size=(80,25))
+        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(80, 25))
         col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
-        self.author = col8
+        self.url = col8
 
-        col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
-        col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
-        self.corauthor = col10
+        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80, 25))
+        col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        self.dissection = col14
 
-        col11 = wx.StaticText(self.panel, -1, u"发表日期", pos=(850, 100), size=(50,25))
-        col12 = wx.TextCtrl(self.panel, -1, pos=(900, 100), size=(300, 30))
-        self.datel = col12
+        col15 = wx.StaticText(self.panel, -1, u"主治疾病", pos=(450, 200), size=(50, 25))
+        col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        self.disease = col16
 
-        col13 = wx.StaticText(self.panel, -1, u"疾病", pos=(5, 200), size=(80,25))
-        col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
-        self.disease = col14
+        col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(5, 350), size=(50, 25))
+        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style=wx.TE_MULTILINE)
+        self.compatibility = col18
 
-        col15 = wx.StaticText(self.panel, -1, u"症状", pos=(450, 200), size=(50,25))
-        col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE)
-        self.symptom = col16
-
-        col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(850, 200), size=(50,25))
-        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 200), size=(300, 100), style = wx.TE_MULTILINE)
-        self.acupoint = col18
-
-        col19 = wx.StaticText(self.panel, -1, u"文献存储位置", pos=(5, 350), size=(80,25))
-        col20 = wx.TextCtrl(self.panel, -1, pos=(100, 350), size=(300, 30))
+        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(80, 25))
+        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
         self.location = col20
 
-        col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
-        col22 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
-        self.annotation = col22
+        self.select_id = select_id
+        self.infoiid = self.mainframe.list.GetItem(select_id, 0).Text
 
-        col23 = wx.StaticText(self.panel, -1, u"录入者", pos=(850, 350), size=(50,25))
-        col24 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 350), size=(300, 30))
-        self.writer = col24
+        # 连接数据库
+        self.dbInfo = Acuact()
+        self.showAllText()
 
-        save_info = wx.Button(self.panel, label=u"保存", pos=(5, 400))
-        self.Bind(wx.EVT_BUTTON, self.saveInfo, save_info)
+    def showAllText(self):
+        data = self.dbInfo.getInfoById(self.infoiid)
 
-        #数据库接口
-        self.dbInfo = Infoact()
+        self.id.SetValue(data[0])
+        self.chinese.SetValue(data[1])
+        self.vein.SetValue(data[2])
+        self.dissection.SetValue(data[3])
+        self.disease.SetValue(data[4])
+        self.compatibility.SetValue(data[5])
+        self.location.SetValue(data[6])
+        self.url.SetValue(data[7])
 
-    def saveInfo(self, evt):
-        '''
-            #获取文本，插入数据
-        :param evt:
-        :return:
-        '''
-
-        iid = self.iid.GetValue()
-        typel = self.typel.GetValue()
-        title = self.title.GetValue()
-        author = self.author.GetValue()
-        corauthor = self.corauthor.GetValue()
-        datel = self.datel.GetValue()
+    def Update(self, evt):
+        #保存修改后的值
+        id = self.id.GetValue()
+        chinese = self.chinese.GetValue()
+        vein = self.vein.GetValue()
+        dissection = self.dissection.GetValue()
         disease = self.disease.GetValue()
-        symptom = self.symptom.GetValue()
-        acupoint = self.acupoint.GetValue()
+        compatibility = self.compatibility.GetValue()
         location = self.location.GetValue()
-        annotation = self.annotation.GetValue()
-        writer = self.writer.GetValue()
+        url = self.location.GetValue()
 
-        if iid == '' or acupoint =='' or writer =='':
+        if id == '' or compatibility == '':
             warn = wx.MessageDialog(self, message=u"有非空字段为空！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)
             warn.ShowModal()  # 提示错误
             warn.Destroy()
@@ -107,11 +194,12 @@ class AddFrame(wx.Frame):
         else:
             print u'开始写入'
 
-            info = Information(iid, typel, title, author, corauthor, datel, disease, symptom, acupoint, location, annotation, writer)
-            self.dbInfo.insertInfo(info)
+            info = Acupoint(id, chinese, vein, dissection, disease, compatibility, location, url)
+            self.dbInfo.saveUpdate(id, info)
             self.mainframe.addToList()
 
         self.Destroy()
+
 class ShowFrame(wx.Frame):
     #显示具体信息
     def __init__(self, parent, title, select_id):
@@ -139,14 +227,6 @@ class ShowFrame(wx.Frame):
         col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(80,25))
         col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
         self.url = col8
-        #
-        # col9 = wx.StaticText(self.panel, -1, u"通讯作者", pos=(450, 100), size=(50,25))
-        # col10 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
-        # self.corauthor = col10
-        #
-        # col11 = wx.StaticText(self.panel, -1, u"发表日期", pos=(850, 100), size=(50,25))
-        # col12 = wx.TextCtrl(self.panel, -1, pos=(900, 100), size=(300, 30))
-        # self.datel = col12
 
         col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80,25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
@@ -163,14 +243,6 @@ class ShowFrame(wx.Frame):
         col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(80,25))
         col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
         self.location = col20
-        #
-        # col21 = wx.StaticText(self.panel, -1, u"注释", pos=(450, 350), size=(50,25))
-        # col22 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
-        # self.annotation = col22
-        #
-        # col23 = wx.StaticText(self.panel, -1, u"录入者", pos=(850, 350), size=(50,25))
-        # col24 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 350), size=(300, 30))
-        # self.writer = col24
 
         self.select_id = select_id
         self.infoiid = self.mainframe.list.GetItem(select_id, 0).Text
@@ -264,19 +336,28 @@ class MyFrame(wx.Frame):
         #     self.list.SetItem(j, 3, data[3])
 
     def add_data(self, evt):
-        add_f = AddFrame(self, u'添加信息')
-        add_f.Show(True)
+        return None
+        #add_f = AddFrame(self, u'添加信息')
+        #add_f.Show(True)
 
     def delete(self, event):
         return None
 
     def modify(self, event):
-        return None
+        selectId = self.list.GetFirstSelected()
+        if selectId == -1:
+            warn = wx.MessageDialog(self, message=u"未选中任何条目！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)
+            warn.ShowModal()  # 提示错误
+            warn.Destroy()
+            return
+        else:
+            show_f = UpdateFrame(self, u"修改窗口", selectId)
+            show_f.Show(True)
 
     def select_data(self, event):
         selectId = self.list.GetFirstSelected()
         if selectId == -1:
-            warn = wx.MessageDialog(self, message=u"未选中任何条目！！！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)
+            warn = wx.MessageDialog(self, message=u"未选中任何条目！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)
             warn.ShowModal()  # 提示错误
             warn.Destroy()
             return
