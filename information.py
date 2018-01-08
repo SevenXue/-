@@ -14,3 +14,15 @@ class Information:
         self.location = location
         self.annotation = annotation
         self.writer = writer
+
+
+class Acupoint:
+    def __init__(self, id, chinese, vein, dissection, disease, compatibility, location, url):
+        self.id = id
+        self.chinese = chinese
+        self.vein = vein
+        self.dissection = dissection
+        self.disease = disease
+        self.compatibility = compatibility
+        self.location = location
+        self.url = url
