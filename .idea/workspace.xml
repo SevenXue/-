@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/Infoact.py" line="5" />
-    <bookmark url="file://$PROJECT_DIR$/frame.py" line="22" />
+    <bookmark url="file://$PROJECT_DIR$/frame.py" line="118" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebef34f-8541-42c4-afd8-8994b1990491" name="Default" comment="" />
@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="frame.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="frame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
+            <state relative-caret-position="2688">
+              <caret line="255" column="28" lean-forward="true" selection-start-line="255" selection-start-column="28" selection-end-line="255" selection-end-column="28" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
               </folding>
@@ -35,20 +35,10 @@
         <entry file="file://$PROJECT_DIR$/tmpframe.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
-              <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+              <caret line="439" column="0" lean-forward="true" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="acupoint.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acupoint.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="84" lean-forward="false" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -60,14 +50,8 @@
               <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding>
                 <element signature="e#17#31#0" expanded="true" />
-                <marker date="1515390090267" expanded="true" signature="421:433" ph="insert into acup... " />
-                <marker date="1515390090267" expanded="true" signature="421:498" ph="insert into information... " />
-                <marker date="1515390090267" expanded="true" signature="421:565" ph="insert into information... " />
-                <marker date="1515390090267" expanded="true" signature="421:566" ph="insert into information... " />
-                <marker date="1515390090267" expanded="true" signature="421:638" ph="insert into information... " />
-                <marker date="1515390090267" expanded="true" signature="1718:1756" ph="select * fro... information" />
-                <marker date="1515390090267" expanded="true" signature="2150:2186" ph="delete from " />
-                <marker date="1515390090267" expanded="true" signature="2156:2186" ph="select * fro... information" />
+                <marker date="1515419250669" expanded="true" signature="73:142" ph="..." />
+                <marker date="1515419250669" expanded="true" signature="95:142" ph="..." />
               </folding>
             </state>
           </provider>
@@ -76,15 +60,10 @@
       <file leaf-file-name="Acuact.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Acuact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1937">
-              <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+            <state relative-caret-position="764">
+              <caret line="130" column="19" lean-forward="true" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
               <folding>
                 <element signature="e#17#31#0" expanded="true" />
-                <marker date="1515388104411" expanded="true" signature="418:478" ph="insert into acupoint... " />
-                <marker date="1515388104411" expanded="true" signature="418:563" ph="insert into acupoint... " />
-                <marker date="1515388104411" expanded="true" signature="1024:1067" ph="select id, c... acupoint" />
-                <marker date="1515388104411" expanded="true" signature="1548:1582" ph="select * fro... acupoint" />
-                <marker date="1515388104411" expanded="true" signature="1976:2008" ph="delete from " />
               </folding>
             </state>
           </provider>
@@ -93,8 +72,18 @@
       <file leaf-file-name="information.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/information.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-51">
               <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,6 +111,7 @@
         <option value="$PROJECT_DIR$/Infoact.py" />
         <option value="$PROJECT_DIR$/tmpframe.py" />
         <option value="$PROJECT_DIR$/frame.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -311,29 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/information.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Acuact.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1937">
-          <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-          <folding>
-            <element signature="e#17#31#0" expanded="true" />
-            <marker date="1515388104411" expanded="true" signature="418:478" ph="insert into acupoint... " />
-            <marker date="1515388104411" expanded="true" signature="418:563" ph="insert into acupoint... " />
-            <marker date="1515388104411" expanded="true" signature="1024:1067" ph="select id, c... acupoint" />
-            <marker date="1515388104411" expanded="true" signature="1548:1582" ph="select * fro... acupoint" />
-            <marker date="1515388104411" expanded="true" signature="1976:2008" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/ProgramData/Anaconda2/Lib/site-packages/wx-3.0-msw/wx/_controls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
@@ -348,14 +315,38 @@
           <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
             <element signature="e#17#31#0" expanded="true" />
-            <marker date="1515390090267" expanded="true" signature="421:433" ph="insert into acup... " />
-            <marker date="1515390090267" expanded="true" signature="421:498" ph="insert into information... " />
-            <marker date="1515390090267" expanded="true" signature="421:565" ph="insert into information... " />
-            <marker date="1515390090267" expanded="true" signature="421:566" ph="insert into information... " />
-            <marker date="1515390090267" expanded="true" signature="421:638" ph="insert into information... " />
-            <marker date="1515390090267" expanded="true" signature="1718:1756" ph="select * fro... information" />
-            <marker date="1515390090267" expanded="true" signature="2150:2186" ph="delete from " />
-            <marker date="1515390090267" expanded="true" signature="2156:2186" ph="select * fro... information" />
+            <marker date="1515419250669" expanded="true" signature="73:142" ph="..." />
+            <marker date="1515419250669" expanded="true" signature="95:142" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Acuact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="130" column="19" lean-forward="true" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+          <folding>
+            <element signature="e#17#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="439" column="0" lean-forward="true" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2688">
+          <caret line="255" column="28" lean-forward="true" selection-start-line="255" selection-start-column="28" selection-end-line="255" selection-end-column="28" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -368,23 +359,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmpframe.py">
+    <entry file="file://$PROJECT_DIR$/information.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-51">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frame.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
