@@ -117,14 +117,15 @@ class UpdateFrame(wx.Frame):
     def __init__(self, parent, title, select_id):
         self.mainframe = parent
 
-        wx.Frame.__init__(self, parent, title=title, size=(1000, 500))
+        wx.Frame.__init__(self, parent, title=title, size=(1000, 600))
 
-        self.panel = wx.Panel(self, pos=(0, 0), size=(1000, 500))
+        self.panel = wx.Panel(self, pos=(0, 0), size=(1000, 800))
         self.panel.SetBackgroundColour("#FFFFFF")
 
         # 12个编辑框
-        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(80, 25))
-        col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
+        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(50, 25))
+        col2 = wx.TextCtrl(self.panel, -1, pos=(100, 8), size=(300, 30), style=wx.TE_READONLY)
+        col2.SetBackgroundColour("#BBFFFF")
         self.id = col2
 
         col3 = wx.StaticText(self.panel, -1, u"穴位", pos=(450, 8), size=(50, 25))
@@ -135,11 +136,12 @@ class UpdateFrame(wx.Frame):
         col6 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
         self.vein = col6
 
-        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(80, 25))
-        col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
+        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(50, 25))
+        col8 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30), style=wx.TE_READONLY)
+        col8.SetBackgroundColour("#BBFFFF")
         self.url = col8
 
-        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80, 25))
+        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(50, 25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style=wx.TE_MULTILINE)
         self.dissection = col14
 
@@ -151,9 +153,12 @@ class UpdateFrame(wx.Frame):
         col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style=wx.TE_MULTILINE)
         self.compatibility = col18
 
-        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(80, 25))
-        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
+        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(50, 25))
+        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 100), style=wx.TE_MULTILINE)
         self.location = col20
+
+        save_info = wx.Button(self.panel, label=u"保存", pos=(5, 500))
+        self.Bind(wx.EVT_BUTTON, self.Update, save_info)
 
         self.select_id = select_id
         self.infoiid = self.mainframe.list.GetItem(select_id, 0).Text
@@ -166,17 +171,7 @@ class UpdateFrame(wx.Frame):
         data = self.dbInfo.getInfoById(self.infoiid)
 
 
-        self.id.SetValue(data[0])
-        self.chinese.SetValue(data[1])
-        self.vein.SetValue(data[2])
-        self.dissection.SetValue(data[3])
-        self.disease.SetValue(data[4])
-        self.compatibility.SetValue(data[5])
-        self.location.SetValue(data[6])
-        self.url.SetValue(data[7])
-
-
-        self.id.SetValue(data[0])
+        self.id.SetValue(str(data[0]))
         self.chinese.SetValue(data[1])
         self.vein.SetValue(data[2])
         self.dissection.SetValue(data[3])
@@ -207,7 +202,11 @@ class UpdateFrame(wx.Frame):
 
             info = Acupoint(id, chinese, vein, dissection, disease, compatibility, location, url)
             self.dbInfo.saveUpdate(id, info)
-            self.mainframe.addToList()
+            #self.mainframe.addToList()
+            self.mainframe.list.SetStringItem(self.select_id, 1, chinese)
+            self.mainframe.list.SetStringItem(self.select_id, 2, vein)
+            self.mainframe.list.SetStringItem(self.select_id, 3, url)
+            self.mainframe.list.SetStringItem(self.select_id, 4, compatibility)
 
         self.Destroy()
 
@@ -223,36 +222,40 @@ class ShowFrame(wx.Frame):
         self.panel.SetBackgroundColour("#FFFFFF")
 
         #12个编辑框
-        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(80,25))
-        col2 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 8), size=(300, 30))
+        col1 = wx.StaticText(self.panel, -1, 'id', pos=(5, 8), size=(50,25))
+        col2 = wx.TextCtrl(self.panel, -1, pos=(100, 8), size=(300, 30), style=wx.TE_READONLY)
+        col2.SetBackgroundColour("#FFFFFF")
         self.id = col2
 
         col3 = wx.StaticText(self.panel, -1, u"穴位", pos=(450, 8), size=(50,25))
-        col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30))
+        col4 = wx.TextCtrl(self.panel, -1, pos=(500, 8), size=(300, 30), style=wx.TE_READONLY)
+        col4.SetBackgroundColour("#FFFFFF")
         self.chinese = col4
 
         col5 = wx.StaticText(self.panel, -1, u"脉络", pos=(5, 100), size=(50,25))
-        col6 = wx.TextCtrl(self.panel, -1,  pos=(100, 100), size=(300, 30))
+        col6 = wx.TextCtrl(self.panel, -1,  pos=(100, 100), size=(300, 30), style=wx.TE_READONLY)
+        col6.SetBackgroundColour("#FFFFFF")
         self.vein = col6
 
-        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(80,25))
-        col8 = wx.TextCtrl(self.panel, -1, pos=(100, 100), size=(300, 30))
+        col7 = wx.StaticText(self.panel, -1, u"链接", pos=(450, 100), size=(50,25), style=wx.TE_READONLY)
+        col8 = wx.TextCtrl(self.panel, -1, pos=(500, 100), size=(300, 30))
+        col8.SetBackgroundColour("#FFFFFF")
         self.url = col8
 
-        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(80,25))
-        col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE)
+        col13 = wx.StaticText(self.panel, -1, u"解剖", pos=(5, 200), size=(50,25))
+        col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style = wx.TE_MULTILINE | wx.TE_READONLY)
         self.dissection = col14
 
         col15 = wx.StaticText(self.panel, -1, u"主治疾病", pos=(450, 200), size=(50,25))
-        col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE)
+        col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style = wx.TE_MULTILINE | wx.TE_READONLY)
         self.disease = col16
 
         col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(5, 350), size=(50,25))
-        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style = wx.TE_MULTILINE)
+        col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(100, 350), size=(300, 100), style = wx.TE_MULTILINE | wx.TE_READONLY)
         self.compatiblity = col18
 
-        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(80,25))
-        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 30))
+        col19 = wx.StaticText(self.panel, -1, u"定位", pos=(450, 350), size=(50,25))
+        col20 = wx.TextCtrl(self.panel, -1, pos=(500, 350), size=(300, 100), style = wx.TE_MULTILINE | wx.TE_READONLY)
         self.location = col20
 
         self.select_id = select_id
@@ -265,7 +268,7 @@ class ShowFrame(wx.Frame):
     def showAllText(self):
         data = self.dbInfo.getInfoById(self.infoiid)
 
-        self.id.SetValue(data[0])
+        self.id.SetValue(str(data[0]))
         self.chinese.SetValue(data[1])
         self.vein.SetValue(data[2])
         self.dissection.SetValue(data[3])
@@ -284,36 +287,38 @@ class MyFrame(wx.Frame):
         wx.Frame.__init__(self, parent, ID, title, wx.DefaultPosition, wx.Size(800,400))
 
         # 生成一个列表
-        self.list = wx.ListCtrl(self, -1, size=(400, 300),
+        self.list = wx.ListCtrl(self, -1, size=(800, 300),
                                 style=wx.LC_REPORT | wx.LC_HRULES | wx.LC_VRULES)
 
         self.list.InsertColumn(0, u"编号")
         self.list.InsertColumn(1, u"穴位")
         self.list.InsertColumn(2, u"脉络")
         self.list.InsertColumn(3, u"链接")
+        self.list.InsertColumn(4, u'常用配伍')
 
         # self.list.InsertColumn(0, u"编号")
         # self.list.InsertColumn(1, u"题目")
         # self.list.InsertColumn(2, u"配伍穴位")
         # self.list.InsertColumn(3, u"录入者")
         # 设置各列的宽度
-        self.list.SetColumnWidth(0, 150)  # 设置每一列的宽度
-        self.list.SetColumnWidth(1, 250)
-        self.list.SetColumnWidth(2, 250)
-        self.list.SetColumnWidth(3, 100)
+        self.list.SetColumnWidth(0, 50)  # 设置每一列的宽度
+        self.list.SetColumnWidth(1, 50)
+        self.list.SetColumnWidth(2, 100)
+        self.list.SetColumnWidth(3, 350)
+        self.list.SetColumnWidth(4, 350)
 
         # 添加一组按钮，实现增删改查,用一个panel来管理该组按钮的布局
-        self.panel = wx.Panel(self, pos=(0, 300), size=(400, 100))
+        self.panel = wx.Panel(self, pos=(450, 300), size=(800, 100))
 
         # 定义一组按钮
         # base information of database
         table_list = ['Acupoint', 'Information']
 
         self.qName = wx.StaticText(self.panel, -1, "DataBase:", pos=(10, 15), size=(60, 30))
-        self.qName0 = wx.TextCtrl(self.panel, -1, value='Acupoint',pos=(80, 15), style=wx.TE_READONLY | wx.TE_CENTER, size=(80, -1))
-        self.qName1 = wx.StaticText(self.panel, -1, "Table:", pos=(180, 15))
-        self.qName2 = wx.Choice(self.panel, -1, choices=table_list, pos=(230, 15), size=(80, -1))
-        show_button = wx.Button(self.panel, label=u"显示", pos=(340, 15), size=(60, 30))
+        self.qName0 = wx.TextCtrl(self.panel, -1, value='Acupuncture',pos=(80, 15), style=wx.TE_READONLY | wx.TE_CENTER, size=(80, 30))
+        self.qName1 = wx.StaticText(self.panel, -1, "Table:", pos=(170, 15), size=(50, 30))
+        self.qName2 = wx.Choice(self.panel, -1, choices=table_list, pos=(220, 15), size=(100, 30))
+        show_button = wx.Button(self.panel, label=u"显示", pos=(330, 15), size=(60, 30))
         self.Bind(wx.EVT_BUTTON, self.show_data, show_button)
 
         #操作按钮
@@ -337,14 +342,16 @@ class MyFrame(wx.Frame):
 
         #添加数据库操作对象
         self.dbhelper = Acuact()
-        # datas = self.dbhelper.getAll()
-        #
-        # for j in range(len(datas)):
-        #     data = datas[j]
-        #     self.list.SetItem(j, 0, data[0])
-        #     self.list.SetItem(j, 1, data[1])
-        #     self.list.SetItem(j, 2, data[2])
-        #     self.list.SetItem(j, 3, data[3])
+        datas = self.dbhelper.getAll()
+
+        for j in range(len(datas)):
+            data = datas[j]
+            index = self.list.InsertStringItem(sys.maxint,str(data[0]))
+            #self.list.SetStringItem(index, 1, str(data[0]))
+            self.list.SetStringItem(index, 1, data[1])
+            self.list.SetStringItem(index, 2, data[2])
+            self.list.SetStringItem(index, 3, data[3])
+            self.list.SetStringItem(index, 4, data[4])
 
     def add_data(self, evt):
         return None
@@ -375,17 +382,6 @@ class MyFrame(wx.Frame):
         else:
             show_f = ShowFrame(self, u"查看窗口", selectId)
             show_f.Show(True)
-
-    def addToList(self):
-        self.dbhelper = Acuact()
-        datas = self.dbhelper.getAll()
-        print datas
-        for j in range(len(datas)):
-            data = datas[j]
-            self.list.SetItem(j, 0, data[0])
-            self.list.SetItem(j, 1, data[1])
-            self.list.SetItem(j, 2, data[2])
-            self.list.SetItem(j, 3, data[3])
 
     def show_data(self, event):
         table = self.qName2.GetString(self.qName2.GetSelection())

@@ -1,6 +1,7 @@
 # -coding:utf-8
 
 import pymysql
+
 from information import *
 
 class Acuact:
@@ -41,7 +42,7 @@ class Acuact:
         :return:
         '''
 
-        sql = "select id, chinese, vein, url from acupoint"
+        sql = "select id, chinese, vein, url, compatibility from acupoint"
 
         conn = self.getCon()
         if conn == None:
@@ -56,6 +57,30 @@ class Acuact:
 
         for item in rows:
             list.append(item)
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return list
+
+    def getChinese(self):
+
+        sql = "select chinese from acupoint"
+
+        conn = self.getCon()
+        if conn == None:
+            return
+
+        cursor = conn.cursor()
+        cursor.execute(sql)
+
+        # 获取查询结果
+        rows = cursor.fetchall()
+        list = []
+
+        for item in rows:
+            list.append(item[0])
 
         conn.commit()
         cursor.close()
@@ -85,32 +110,13 @@ class Acuact:
 
         return row
 
-    # def deleteInfo(self, id):
-    #     '''
-    #         #通过id获取信息
-    #     :param id:
-    #     :return:
-    #     '''
-    #     sql = "delete from acupoint where id=%s"
-    #
-    #     conn = self.getCon()
-    #     if conn == None:
-    #         return
-    #
-    #     cursor = conn.cursor()
-    #     cursor.execute(sql, (id,))
-    #
-    #     conn.commit()
-    #     cursor.close()
-    #     conn.close()
-
     def saveUpdate(self, id, info):
         '''
             #通过
         :param id:
         :return:
         '''
-        sql = "update acupoint set chinese=%s, vein=%s, dissection=%s, disease=%s, compatibility=%s, location=%s, url=%s where id=%s"
+        sql = "update acupoint set chinese=%s, vein=%s, dissection=%s, disease=%s, compatibility=%s, location=%s where id=%s"
 
         conn = self.getCon()
         if conn == None:
@@ -118,7 +124,7 @@ class Acuact:
 
         cursor = conn.cursor()
         cursor.execute(sql, (info.chinese, info.vein, info.dissection,
-                             info.disease, info.compatibility, info.location, info.url, id))
+                             info.disease, info.compatibility, info.location, id))
 
         conn.commit()
         cursor.close()
@@ -126,9 +132,6 @@ class Acuact:
 
 if __name__ == '__main__':
     db = Acuact()
-    test_info = Acupoint(2,3,4,5,6,7,8)
-    db.insertInfo(test_info)
-    info_list = db.getAll()
-    for item in info_list:
-        print(item)
+    #test_info = Acupoint(2,3,4,5,6,7,8)
+    db.getChinese()
 

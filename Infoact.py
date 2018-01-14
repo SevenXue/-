@@ -18,7 +18,7 @@ class Infoact:
         '''
 
         #insert sql
-        sql = 'insert into information(iid, typel, title, author, corauthor, dates, disease,' \
+        sql = 'insert into information(iid, type, title, author, corauthor, date, disease,' \
               'symptom, acupoint, location, annotation, writer) ' \
               'value(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
 
@@ -42,7 +42,7 @@ class Infoact:
         :return:
         '''
 
-        sql = "select iid, title, acupoint, writer from inforation"
+        sql = "select iid, title, acupoint, writer from information"
 
         conn = self.getCon()
         if conn == None:
@@ -111,7 +111,7 @@ class Infoact:
         :param id:
         :return:
         '''
-        sql = "update information set type=%s, title=%s, author=%s, corauthor=%s, date=%s, disease=%s, sympotom=%s, " \
+        sql = "update information set type=%s, title=%s, author=%s, corauthor=%s, date=%s, disease=%s, symptom=%s, " \
               " acupoint=%s, location=%s, annotation=%s, writer=%s where iid=%s"
 
         conn = self.getCon()
