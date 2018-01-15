@@ -189,7 +189,7 @@ class UpdateFrame(wx.Frame):
         disease = self.disease.GetValue()
         compatibility = self.compatibility.GetValue()
         location = self.location.GetValue()
-        url = self.location.GetValue()
+        url = self.url.GetValue()
 
         if id == '' or compatibility == '':
             warn = wx.MessageDialog(self, message=u"有非空字段为空！", caption=u"错误警告", style=wx.YES_DEFAULT | wx.ICON_ERROR)

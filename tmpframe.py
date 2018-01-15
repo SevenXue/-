@@ -17,9 +17,9 @@ class AddFrame(wx.Frame):
 
         self.mainframe = parent
 
-        wx.Frame.__init__(self, parent, title=title, size=(1000, 500))
+        wx.Frame.__init__(self, parent, title=title, size=(1300, 500))
 
-        self.panel = wx.Panel(self, pos=(0, 0), size=(1000, 500))
+        self.panel = wx.Panel(self, pos=(0, 0), size=(1300, 500))
         self.panel.SetBackgroundColour("#FFFFFF")
 
         # 12个编辑框
@@ -49,14 +49,17 @@ class AddFrame(wx.Frame):
 
         col13 = wx.StaticText(self.panel, -1, u"疾病", pos=(5, 200), size=(80, 25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col25 = wx.StaticText(self.panel, -1, u"疾病用'，'隔开，结尾不要有'。'", pos=(100, 300), size=(300, 25))
         self.disease = col14
 
         col15 = wx.StaticText(self.panel, -1, u"症状", pos=(450, 200), size=(50, 25))
         col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col26 = wx.StaticText(self.panel, -1, u"症状用'，'隔开，结尾不要有'。'", pos=(100, 300), size=(300, 25))
         self.symptom = col16
 
         col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(850, 200), size=(50, 25))
         col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col27 = wx.StaticText(self.panel, -1, u"穴位用'，'隔开，不同配伍用'；'隔开，结尾不要有'。'", pos=(900, 300), size=(300, 25))
         col18.SetBackgroundColour("#FF3030")
         self.acupoint = col18
 
@@ -157,14 +160,17 @@ class UpdateFrame(wx.Frame):
 
         col13 = wx.StaticText(self.panel, -1, u"疾病", pos=(5, 200), size=(80, 25))
         col14 = wx.TextCtrl(self.panel, -1, pos=(100, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col25 = wx.StaticText(self.panel, -1, u"疾病用'，'隔开，结尾不要有'。'", pos=(100, 300), size=(300, 25))
         self.disease = col14
 
         col15 = wx.StaticText(self.panel, -1, u"症状", pos=(450, 200), size=(50, 25))
         col16 = wx.TextCtrl(self.panel, -1, pos=(500, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col26 = wx.StaticText(self.panel, -1, u"不同症状用'，'隔开，结尾不要有'。'", pos=(500, 300), size=(300, 25))
         self.symptom = col16
 
         col17 = wx.StaticText(self.panel, -1, u"配伍穴位", pos=(850, 200), size=(50, 25))
         col18 = wx.TextCtrl(self.panel, -1, u"不可为空", pos=(900, 200), size=(300, 100), style=wx.TE_MULTILINE)
+        col27 = wx.StaticText(self.panel, -1, u"穴位用'，'隔开，不同配伍用'；'隔开，结尾不要有'。'", pos=(900, 300), size=(300, 25))
         col18.SetBackgroundColour("#FF3030")
         self.acupoint = col18
 
@@ -444,31 +450,24 @@ class MyFrame(wx.Frame):
     def adjust_acupoint(self, acupoint):
         dbAcu = Acuact()
         acupoints = dbAcu.getChinese()
-        # print acupoints[0]
-        point_list = acupoint.split('，')
+        points = acupoint.split('；')
+        point_list = []
+        for item in points:
+            point_list.append(item.split('，'))
         # print point_list
         tmp_label = 0
-        for item in point_list:
-            # print item == acupoints[0]
-            if item not in acupoints:
-                warn = wx.MessageDialog(self, message='"' + item + '"' + u"不在数据库中，请检查是否有别名！", caption=u"错误警告",
-                                        style=wx.YES_DEFAULT | wx.ICON_ERROR)
-                warn.ShowModal()
-                warn.Destroy()
-                tmp_label = 1
-                break
+        for acu_list in point_list:
+            for item in acu_list:
+                if item not in acupoints:
+                    warn = wx.MessageDialog(self, message='"' + item + '"' + u"不在数据库中，请检查是否有别名！", caption=u"错误警告",
+                                            style=wx.YES_DEFAULT | wx.ICON_ERROR)
+                    warn.ShowModal()
+                    warn.Destroy()
+                    tmp_label = 1
+                    break
+                else:
+                    for ()
         return tmp_label
-    # def addToList(self):
-    #     self.dbhelper = Infoact()
-    #     datas = self.dbhelper.getAll()
-    #     #
-    #     for j in range(len(datas)):
-    #         data = datas[j]
-    #         index = self.list.InsertStringItem(sys.maxint, data[0])
-    #         # self.list.SetStringItem(index, 1, str(data[0]))
-    #         self.list.SetStringItem(index, 1, data[1])
-    #         self.list.SetStringItem(index, 2, data[2])
-    #         self.list.SetStringItem(index, 3, data[3])
 
 class MyApp(wx.App):
     def OnPreInit(self):
