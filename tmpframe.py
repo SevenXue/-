@@ -456,7 +456,9 @@ class MyFrame(wx.Frame):
             point_list.append(item.split('，'))
         # print point_list
         tmp_label = 0
+        id_list = []
         for acu_list in point_list:
+
             for item in acu_list:
                 if item not in acupoints:
                     warn = wx.MessageDialog(self, message='"' + item + '"' + u"不在数据库中，请检查是否有别名！", caption=u"错误警告",
@@ -465,8 +467,9 @@ class MyFrame(wx.Frame):
                     warn.Destroy()
                     tmp_label = 1
                     break
-                else:
-                    for ()
+                # else:
+                #     for (index, acu) in enumerate(acupoints):
+                #         if item == acu
         return tmp_label
 
 class MyApp(wx.App):
